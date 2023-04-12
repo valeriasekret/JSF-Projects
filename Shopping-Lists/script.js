@@ -6,26 +6,14 @@ const taskForm = document.getElementById('taskForm');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-// Function to set an item in localStorage
-function setLocalStorageItem(key, value) {
-  try {
-    localStorage.setItem(key, value);
-  } catch (error) {
-    // Handle the error, e.g. show an error message to the user
-    console.error('Error setting localStorage item:', error);
-  }
-}
+// const myWindow = window.open("https:///Users/valeriiasekret/Documents/jsf-projects/JSF-Projects/Shopping-Lists/img/joke-slogan.PNG", "", "width=300,height=300");
+// setTimeout(() => {
+//     myWindow.moveTo(550, 200);
+// }, 10);
 
-// Function to get an item from localStorage
-function getLocalStorageItem(key) {
-  try {
-    return localStorage.getItem(key);
-  } catch (error) {
-    // Handle the error, e.g. show an error message to the user
-    console.error('Error getting localStorage item:', error);
-    return null; // Return a default value or null in case of error
-  }
-}
+// setTimeout(() => {
+//     myWindow.close();
+// }, 8000);
 
 // Load task lists on page load with "Default List" selected
 window.addEventListener('load', () => {
@@ -121,7 +109,7 @@ function loadTasks(selectedList) {
     // Add a click event listener to the delete button
     deleteButton.addEventListener('click', (e) => {
       deleteTask(selectedList, index);
-    });  
+    });
 
     // Append delete button to the container
     container.appendChild(deleteButton);
