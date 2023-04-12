@@ -6,14 +6,10 @@ const taskForm = document.getElementById('taskForm');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-// const myWindow = window.open("https:///Users/valeriiasekret/Documents/jsf-projects/JSF-Projects/Shopping-Lists/img/joke-slogan.PNG", "", "width=300,height=300");
-// setTimeout(() => {
-//     myWindow.moveTo(550, 200);
-// }, 10);
-
-// setTimeout(() => {
-//     myWindow.close();
-// }, 8000);
+const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/joke-slogan.PNG", "", "left=550,top=200,width=320,height=320");
+setTimeout(() => {
+    myWindow.close();
+}, 8000);
 
 // Load task lists on page load with "Default List" selected
 window.addEventListener('load', () => {
