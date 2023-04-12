@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>KIL'KO</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="shortcut icon" href="./img/shorcut-image.svg" type="image/x-icon">
+</head>
+
+<body>
+  <div class="container">
+    <div class="appcontent">
+      <h1 class="title">SHOPPING LIST</h1>
+      <div class="appcontent__input">
+        <form id="listForm">
+          <input type="text" id="listNameInput" placeholder="Add new list name">
+          <button type="submit" class="adding__button">Create List</button>
+        </form>
+        <p class="subsubtitle">or choose below</p>
+        <div class="list-select">
+          <select id="listSelect"></select>
+          <button id="deleteListButton">Delete List</button>
+        </div>
+        <p class="subsubtitle">Add items to list</p>
+        <form id="taskForm">
+          <input type="text" id="taskInput" placeholder="New item">
+          <button type="submit" class="adding__button">Add item</button>
+        </form>
+        <ul id="taskList"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
