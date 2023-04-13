@@ -70,10 +70,13 @@ width: 170px;
   font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
-  background-clip: text;
+  font-size: 80px;
+	font-weight: 700;
+	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
-	background-image: url(./img/
+	background-image: url('https://github.com/valeriasekret/JSF-Projects/blob/main/Shopping-Lists/img/text-background.PNG?raw=true');
+  background-image:200px
 }
 
 .list-select {
