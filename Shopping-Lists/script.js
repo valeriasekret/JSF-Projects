@@ -6,10 +6,10 @@ const taskForm = document.getElementById('taskForm');
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/joke-slogan.PNG", "", "left=500,top=180,width=440,height=440");
-setTimeout(() => {
-    myWindow.close();
-}, 6000);
+// const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=440,height=440");
+// setTimeout(() => {
+//     myWindow.close();
+// }, 6000);
 
 // Load task lists on page load with "Default List" selected
 window.addEventListener('load', () => {
@@ -168,3 +168,48 @@ document.addEventListener('click', (e) => {
     e.target.parentElement.remove();
   }
 });
+
+
+
+// // Add event listener for add task button
+// addTaskButton.addEventListener('click', () => {
+//   const selectedList = listSelect.value;
+//   const taskInput = document.getElementById('taskInput');
+//   const taskName = taskInput.value;
+  
+//   // Add the new task to the selected list
+//   addTask(selectedList, taskName);
+  
+//   // Clear the task input
+//   taskInput.value = '';
+
+//   // Check if the list has tasks, and show/hide delete button accordingly
+//   const list = getList(selectedList);
+//   const deleteTaskButton = document.getElementById('deleteTaskButton');
+//   if (list.tasks.length > 0) {
+//     deleteTaskButton.style.display = 'block';
+//   } else {
+//     deleteTaskButton.style.display = 'none';
+//   }
+// });
+
+// // Add event listener for delete task button
+// deleteTaskButton.addEventListener('click', () => {
+//   const selectedList = listSelect.value;
+//   const list = getList(selectedList);
+//   const taskInput = document.getElementById('taskInput');
+//   const taskName = taskInput.value;
+  
+//   // Find the index of the task in the array
+//   const taskIndex = list.tasks.findIndex(task => task.name === taskName);
+  
+//   if (taskIndex !== -1) {
+//     // Remove the task from the array
+//     list.tasks.splice(taskIndex, 1);
+    
+//     // Update the UI to reflect the changes
+//     renderTasks(selectedList);
+//   }
+// });
+
+

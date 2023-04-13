@@ -44,15 +44,36 @@ body {
   margin-top: 15px;
 }
 
-h1 {
+/* h1 {
   text-align: center;
   color: var(--text-color);
   font-size: 30px;
-}
+} */
 
-p {
+/* p {
   text-transform: uppercase;
   font-size: 13px;
+} */
+
+.title{
+  width: 364px;
+  height: 50px;
+}
+
+.subtitle{
+width: 170px;
+}
+
+.subsubtitle{
+  width: 167px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	background-image: url(./img/
 }
 
 .list-select {
