@@ -44,39 +44,23 @@ body {
   margin-top: 15px;
 }
 
-/* h1 {
-  text-align: center;
-  color: var(--text-color);
-  font-size: 30px;
-} */
-
-/* p {
-  text-transform: uppercase;
-  font-size: 13px;
-} */
-
 .title{
   width: 364px;
   height: 50px;
 }
 
-.subtitle{
-width: 170px;
-}
-
+.subtitle,
 .subsubtitle{
-  width: 167px;
   text-transform: uppercase;
-  font-weight: bold;
   letter-spacing: 1px;
   text-align: center;
-  font-size: 80px;
+  font-size: 16px;
 	font-weight: 700;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
 	background-image: url('https://github.com/valeriasekret/JSF-Projects/blob/main/Shopping-Lists/img/text-background.PNG?raw=true');
-  background-image:200px
+  background-size: 10px;
 }
 
 .list-select {

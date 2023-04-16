@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body{
+    height: 100vh;
+    background-image: url(./img/background1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section{
+    display: grid;
+    grid-template-columns: repeat(4, 140px);
+    grid-template-rows: repeat(4, 140px);
+    grid-gap: 15px;
+    perspective: 800px;
+  }
+
+  .card{
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+    box-shadow: 0 3px 6px #82689c29, 0 3px 6px rgba(144, 183, 152, 0.23);
+  }
+
+  .face, 
+  .back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .back{
+    background-image: url(./img/backside.png);
+    background-size: cover;
+    backface-visibility: hidden;
+  }
+
+  .toggleCard{
+    transform: rotateY(180deg);
+  }
+
+  .face{
+    transform: rotateY(-180deg);
+  }
+
+  /* <a href="https://www.freepik.com/free-vector/cartoon-style-fast-food-stickers_23997384.htm#page=10&query=Cartoon&position=9&from_view=author">Image by pikisuperstar</a> on Freepik */
+  /* <a href="https://www.vecteezy.com/free-vector/colorful">Colorful Vectors by Vecteezy</a> */
