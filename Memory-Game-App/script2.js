@@ -6,22 +6,22 @@ playerLivesCount.textContent = playerLives;
 
 // генеруємо обєкт з даними
 const getData = () => [
-    { imgSrc: "./img/selflove.png", name: "love-yourself" },
-    { imgSrc: "./img/drink.jpg", name: "drink-water" },
-    { imgSrc: "./img/eat.png", name: "eat-healthy" },
-    { imgSrc: "./img/mind.png", name: "positive-mind" },
-    { imgSrc: "./img/relax.jpg", name: "rest-relax" },
-    { imgSrc: "./img/sleep.png", name: "sleep-well" },
-    { imgSrc: "./img/breathe.png", name: "breathe" },
-    { imgSrc: "./img/workout.jpg", name: "workout" },
-    { imgSrc: "./img/selflove.png", name: "love-yourself" },
-    { imgSrc: "./img/drink.jpg", name: "drink-water" },
-    { imgSrc: "./img/eat.png", name: "eat-healthy" },
-    { imgSrc: "./img/mind.png", name: "positive-mind" },
-    { imgSrc: "./img/relax.jpg", name: "rest-relax" },
-    { imgSrc: "./img/sleep.png", name: "sleep-well" },
-    { imgSrc: "./img/breathe.png", name: "breathe" },
-    { imgSrc: "./img/workout.jpg", name: "workout" },
+    { imgSrc: "./img2/anxious.png", name: "anxious" },
+    { imgSrc: "./img2/confused.png", name: "confused" },
+    { imgSrc: "./img2/disturbed.png", name: "disturbed" },
+    { imgSrc: "./img2/excited.jpg", name: "excited" },
+    { imgSrc: "./img2/happy.png", name: "happy" },,
+    { imgSrc: "./img2/inspired.jpg", name: "inspired" },
+    { imgSrc: "./img2/loving.jpg", name: "loving" },
+    { imgSrc: "./img2/sad.png", name: "sad" },
+    { imgSrc: "./img2/anxious.png", name: "anxious" },
+    { imgSrc: "./img2/confused.png", name: "confused" },
+    { imgSrc: "./img2/disturbed.png", name: "disturbed" },
+    { imgSrc: "./img2/excited.jpg", name: "excited" },
+    { imgSrc: "./img2/happy.png", name: "happy" },,
+    { imgSrc: "./img2/inspired.jpg", name: "inspired" },
+    { imgSrc: "./img2/loving.jpg", name: "loving" },
+    { imgSrc: "./img2/sad.png", name: "sad" },
 ];
 
 //рандомізуємо картки
@@ -95,11 +95,11 @@ const checkCards = (e) => {
     if (toggleCard.length === 16){
         const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/Memo-Game/main/img/win.jpg", "", "left=473,top=280,width=500,height=281");
         setTimeout(() => {
-              myWindow.close();
-            }, 2000);
+            myWindow.close();
+          }, 2000);
         setTimeout(() => {
-            window.location.assign('lv2-emotions.html');
-        },2000);
+          window.location.assign('index.html');
+          },2000);
     }
 };
 
@@ -112,7 +112,7 @@ const restart = () =>{
         cards[index].classList.remove('toggleCard');
         //рандомізую, щоб повернути пойнтер івенти та новий порядок зображень після перезагрузки
         setTimeout (()=>{
-        cards[index].style.pointerEvents = "all";
+            cards[index].style.pointerEvents = "all";
         faces[index].src = item.imgSrc;
         cards[index].setAttribute("name", item.name);
         section.style.pointerEvents = "all";

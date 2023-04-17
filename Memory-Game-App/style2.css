@@ -6,7 +6,7 @@
 
   body{
     height: 100vh;
-    background-image: url(./img/background1.jpg);
+    background-image: url(./img2/background2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -39,7 +39,7 @@
   }
 
   .back{
-    background-image: url(./img/backside.png);
+    background-image: url(./img2/back2.jpg);
     background-size: cover;
     backface-visibility: hidden;
   }
@@ -51,8 +51,3 @@
   .face{
     transform: rotateY(-180deg);
   }
-
-  /* <a href="https://www.freepik.com/free-vector/cartoon-style-fast-food-stickers_23997384.htm#page=10&query=Cartoon&position=9&from_view=author">Image by pikisuperstar</a> on Freepik */
-  /* <a href="https://www.vecteezy.com/free-vector/colorful">Colorful Vectors by Vecteezy</a> */
-
-  /* Image by rawpixel.com */
