@@ -98,7 +98,7 @@ const checkCards = (e) => {
               myWindow.close();
             }, 2000);
         setTimeout(() => {
-            window.location.assign('lv2-emotions.html');
+            window.location.assign('memolv2.html');
         },2000);
     }
 };
