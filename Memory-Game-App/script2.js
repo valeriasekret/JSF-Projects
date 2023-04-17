@@ -98,7 +98,7 @@ const checkCards = (e) => {
             myWindow.close();
           }, 2000);
         setTimeout(() => {
-          window.location.assign('index.html');
+          window.location.assign('memo.html');
           },2000);
     }
 };
