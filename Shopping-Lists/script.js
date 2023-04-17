@@ -127,6 +127,12 @@ function loadTasks(selectedList) {
   });
 }
 
+// deleteButton.addEventListener('click', () => {
+//   savedTasks = savedTasks.filter((savedTask) => savedTask !== task);
+//   localStorage.setItem('tasks', JSON.stringify(savedTasks));
+//   updateTasksList();
+// });
+
 // Function to delete a task list
 function deleteTaskList(selectedList) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};

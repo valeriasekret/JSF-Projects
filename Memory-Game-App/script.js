@@ -1,6 +1,6 @@
 const section = document.querySelector("section");
 const playerLivesCount = document.querySelector("span");
-let playerLives = 7;
+let playerLives = 8;
 
 playerLivesCount.textContent = playerLives;
 
@@ -108,7 +108,7 @@ const restart = (text) =>{
         section.style.pointerEvents = "all";
         }, 1000); 
     });
-    playerLives = 7;
+    playerLives = 8;
     playerLivesCount.textContent = playerLives;
     setTimeout(() => window.alert(text), 100);
 
