@@ -112,7 +112,7 @@ const restart = (text) =>{
     playerLivesCount.textContent = playerLives;
     setTimeout(() => window.alert(text), 100);
 
-    //const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=440,height=440"), 100);
+    //const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=900,height=506"), 100);
 };
 
 cardGenerator()
