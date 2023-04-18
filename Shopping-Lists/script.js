@@ -99,7 +99,7 @@ function loadTasks(selectedList) {
 
     // Create a delete button
     const deleteButton = document.createElement("button");
-    deleteButton.textContent = "-";
+    deleteButton.innerText = "-";
     deleteButton.classList.add("deleteButton");
 
     // Add a click event listener to the delete button

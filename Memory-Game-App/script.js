@@ -63,6 +63,8 @@ const checkCards = (e) => {
     clickedCard.classList.add("flipped");
     const flippedCards = document.querySelectorAll(".flipped");
     const toggleCard = document.querySelectorAll(".toggleCard");
+    const myAudio = new Audio('./audio/click.wav');
+    myAudio.play();
     //логіка
     if (flippedCards.length === 2) {
       if (
@@ -84,6 +86,8 @@ const checkCards = (e) => {
         playerLivesCount.textContent = playerLives;
         if (playerLives===0){
             const myLoseWindow = window.open("https://raw.githubusercontent.com/valeriasekret/Memo-Game/main/img/lose.jpg", "", "left=473,top=280,width=500,height=281");
+            const loseAudio = new Audio('./audio/lose.mp3');
+            loseAudio.play();
             setTimeout(() => {
                 myLoseWindow.close();
               }, 2500);
@@ -94,12 +98,14 @@ const checkCards = (e) => {
     //перевіряємо чи ми виграли гру
     if (toggleCard.length === 16){
         const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/Memo-Game/main/img/win.jpg", "", "left=473,top=280,width=500,height=281");
+        const winAudio = new Audio('./audio/win-applause.wav');
+        winAudio.play();
         setTimeout(() => {
               myWindow.close();
-            }, 2000);
+            }, 3000);
         setTimeout(() => {
             window.location.assign('memolv2.html');
-        },2000);
+        },3000);
     }
 };
 

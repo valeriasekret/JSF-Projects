@@ -10,21 +10,20 @@ body {
     height: 100vh;
     background-image: url(./img/background-main.jpg);
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
     color: rgb(67, 44, 131);
 }
 
 .greeting {
-    display: flex;
     font-size: 45px;
-
 }
 
 .mainlist {
@@ -40,7 +39,7 @@ a:link {
 
 .link1,
 .link2 {
-    height: 90px;
+    height: 100px;
     width: 150px;
     border-radius: 40% 25%;
     list-style: none;
@@ -50,6 +49,18 @@ a:link {
     justify-content: center;
 }
 
+.link1 {
+    border-radius: 40% 25%;
+    background-image: url(./img/link1.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .link2 {
     border-radius: 25% 40%;
+    background-image: url(./img/link2.jpg);
+    background-size: 125%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
