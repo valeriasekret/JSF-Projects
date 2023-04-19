@@ -1,3 +1,4 @@
+// селектори
 const listForm = document.getElementById("listForm");
 const listNameInput = document.getElementById("listNameInput");
 const listSelect = document.getElementById("listSelect");
@@ -6,16 +7,17 @@ const taskForm = document.getElementById("taskForm");
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
+// слоган-вітання чоловіка
 // const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=440,height=440");
 // setTimeout(() => {
 //     myWindow.close();
 // }, 6000);
 
-// Load task lists on page load with "Default List" selected
+// завантажуємо списки з local st. і відображемо на сторінці, з дефолтним списком
 window.addEventListener("load", () => {
   loadTaskLists();
-  listSelect.value = "Default List"; // Set default list name
-  displaySavedTasks(); // Display tasks for the default list
+  listSelect.value = "Default List";
+  displaySavedTasks();
 });
 
 // Add event listener for list form submission
