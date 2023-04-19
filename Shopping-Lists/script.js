@@ -20,7 +20,7 @@ window.addEventListener("load", () => {
   displaySavedTasks();
 });
 
-// Add event listener for list form submission
+// додаю новий список у список вибору списків
 listForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const newListName = listNameInput.value.trim();
@@ -30,7 +30,7 @@ listForm.addEventListener("submit", (e) => {
   }
 });
 
-// Add event listener for task form submission
+// додаю нові товари у вибраний список
 taskForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const selectedList = listSelect.value;
@@ -41,13 +41,15 @@ taskForm.addEventListener("submit", (e) => {
   }
 });
 
-// Add event listener for delete list button
+// можливість видалити список
 deleteListButton.addEventListener("click", () => {
   const selectedList = listSelect.value;
   deleteTaskList(selectedList);
 });
 
-// Function to add a new task list
+/* додаю новий список завдань до додатку, перевіряю, чи не дублюється назва 
+списку з існуючим списком, і зберігаю оновлений список завдань у локальному 
+сховищі. */
 function addTaskList(newListName) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   if (!savedLists[newListName]) {
@@ -59,7 +61,7 @@ function addTaskList(newListName) {
   }
 }
 
-// Function to load task lists
+// завантажую список завдань з локального сховища та створюю випадайку
 function loadTaskLists() {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   listSelect.innerHTML = "";
@@ -71,7 +73,7 @@ function loadTaskLists() {
   loadTasks(listSelect.value);
 }
 
-// Function to delete a task from a list
+// для видалення завдання з вибраного списку завдань
 function deleteTask(selectedList, taskIndex) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   if (savedLists[selectedList]) {
@@ -83,7 +85,7 @@ function deleteTask(selectedList, taskIndex) {
   }
 }
 
-// Function to load tasks for the selected list
+// завантаження списку завдань для обраного списку
 function loadTasks(selectedList) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   const tasks = savedLists[selectedList] || [];
@@ -92,30 +94,30 @@ function loadTasks(selectedList) {
     const li = document.createElement("li");
     li.textContent = task;
 
-    // Create a container element for task item and delete button
+    // роблю контейнер для товару з кнопкою видалення
     const container = document.createElement("div");
     container.classList.add("taskContainer");
 
-    // Append task item to the container
     container.appendChild(li);
 
-    // Create a delete button
+    // роблю кнопку видалення
     const deleteButton = document.createElement("button");
-    deleteButton.innerText = "-";
+    const deleteIcon = document.createElement("i");
+    deleteIcon.classList.add("fa", "fa-minus");
+    deleteButton.appendChild(deleteIcon);
     deleteButton.classList.add("deleteButton");
 
-    // Add a click event listener to the delete button
+    // event listener на кнопку видалення
     deleteButton.addEventListener("click", (e) => {
       deleteTask(selectedList, index);
     });
-
     // Append delete button to the container
     container.appendChild(deleteButton);
 
     // Add a click event listener to each task list item
-    container.addEventListener("click", () => {
+    li.addEventListener("click", () => {
       // Toggle the "done" class to add/remove the strike-through effect
-      container.classList.toggle("done");
+      li.classList.toggle("done");
 
       // Check if the text node is not undefined before accessing its textContent
       if (taskList.childNodes[index]) {
@@ -129,13 +131,7 @@ function loadTasks(selectedList) {
   });
 }
 
-// deleteButton.addEventListener('click', () => {
-//   savedTasks = savedTasks.filter((savedTask) => savedTask !== task);
-//   localStorage.setItem('tasks', JSON.stringify(savedTasks));
-//   updateTasksList();
-// });
-
-// Function to delete a task list
+// функція для видалення списку
 function deleteTaskList(selectedList) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   if (savedLists[selectedList]) {
@@ -146,20 +142,20 @@ function deleteTaskList(selectedList) {
   }
 }
 
-// Load task lists on page load
+// завантажуємо списки товарів при завантаженні сторінки
 window.addEventListener("load", loadTaskLists);
 
 
-// Function to add a new task to a list
+// додаємо нову позицію/товар у список
 function addTask(selectedList, newTaskName) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
-  const maxTasks = 8; // Specify the maximum number of tasks allowed in a list
+  const maxTasks = 8;
 
   if (savedLists[selectedList]) {
     if (savedLists[selectedList].length < maxTasks) {
       savedLists[selectedList].push(newTaskName);
       localStorage.setItem("taskLists", JSON.stringify(savedLists));
-      loadTasks(selectedList); // Update displayed tasks in the selected list
+      loadTasks(selectedList); 
     } else {
       alert(`Maximum of ${maxTasks} tasks allowed in ${selectedList} list!`);
     }
@@ -167,8 +163,6 @@ function addTask(selectedList, newTaskName) {
     alert("Selected list not found in local storage!");
   }
 }
-
-
 
 // Function to display saved tasks in the list that is chosen
 function displaySavedTasks() {
