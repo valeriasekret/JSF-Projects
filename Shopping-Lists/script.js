@@ -8,10 +8,10 @@ const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
 
 // слоган-вітання чоловіка
-// const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=440,height=440");
-// setTimeout(() => {
-//     myWindow.close();
-// }, 6000);
+const myWindow = window.open("https://raw.githubusercontent.com/valeriasekret/JSF-Projects/main/Shopping-Lists/img/jokeslogan.PNG", "", "left=500,top=180,width=440,height=440");
+setTimeout(() => {
+    myWindow.close();
+}, 6000);
 
 // завантажуємо списки з local st. і відображемо на сторінці, з дефолтним списком
 window.addEventListener("load", () => {
