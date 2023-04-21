@@ -70,20 +70,38 @@ function loadTaskLists() {
     option.textContent = list;
     listSelect.appendChild(option);
   });
-  loadTasks(listSelect.value);
+  loadTasks(listSelect.value); //завантажує список завдань для вибраного списку, використовуючи значення списку випадаючого списку listSelect.value.
 }
 
-// для видалення завдання з вибраного списку завдань
-function deleteTask(selectedList, taskIndex) {
+// функція для видалення списку
+function deleteTaskList(selectedList) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   if (savedLists[selectedList]) {
-    savedLists[selectedList].splice(taskIndex, 1); // Remove task from the list
-    localStorage.setItem("taskLists", JSON.stringify(savedLists)); // Update saved task lists in local storage
-    loadTasks(selectedList); // Update displayed tasks in the selected list
+    delete savedLists[selectedList];
+    localStorage.setItem("taskLists", JSON.stringify(savedLists));
+    listSelect.remove(listSelect.selectedIndex);
+    taskList.innerHTML = "";
+  }
+}
+
+// додаємо нову позицію/товар у список
+function addTask(selectedList, newTaskName) {
+  const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
+  const maxTasks = 8;
+
+  if (savedLists[selectedList]) {
+    if (savedLists[selectedList].length < maxTasks) {
+      savedLists[selectedList].push(newTaskName);
+      localStorage.setItem("taskLists", JSON.stringify(savedLists));
+      loadTasks(selectedList); 
+    } else {
+      alert(`Maximum of ${maxTasks} tasks allowed in ${selectedList} list!`);
+    }
   } else {
     alert("Selected list not found in local storage!");
   }
 }
+
 
 // завантаження списку завдань для обраного списку
 function loadTasks(selectedList) {
@@ -120,51 +138,33 @@ function loadTasks(selectedList) {
       li.classList.toggle("done");
 
       // Check if the text node is not undefined before accessing its textContent
+      // перевіряє, чи воно було виконано, і оновлює статус завдання у збережених списках у локальному сховищі 
       if (taskList.childNodes[index]) {
         // Update the task status in the saved lists in local storage
         savedLists[selectedList][index] = taskList.childNodes[index].textContent;
         localStorage.setItem("taskLists", JSON.stringify(savedLists));
       }
     });
-
     taskList.appendChild(container);
   });
 }
 
-// функція для видалення списку
-function deleteTaskList(selectedList) {
+// для видалення завдання з вибраного списку завдань
+function deleteTask(selectedList, taskIndex) {
   const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
   if (savedLists[selectedList]) {
-    delete savedLists[selectedList];
-    localStorage.setItem("taskLists", JSON.stringify(savedLists));
-    listSelect.remove(listSelect.selectedIndex);
-    taskList.innerHTML = "";
-  }
-}
-
-// завантажуємо списки товарів при завантаженні сторінки
-window.addEventListener("load", loadTaskLists);
-
-
-// додаємо нову позицію/товар у список
-function addTask(selectedList, newTaskName) {
-  const savedLists = JSON.parse(localStorage.getItem("taskLists")) || {};
-  const maxTasks = 8;
-
-  if (savedLists[selectedList]) {
-    if (savedLists[selectedList].length < maxTasks) {
-      savedLists[selectedList].push(newTaskName);
-      localStorage.setItem("taskLists", JSON.stringify(savedLists));
-      loadTasks(selectedList); 
-    } else {
-      alert(`Maximum of ${maxTasks} tasks allowed in ${selectedList} list!`);
-    }
+    savedLists[selectedList].splice(taskIndex, 1); // Remove task from the list
+    localStorage.setItem("taskLists", JSON.stringify(savedLists)); // Update saved task lists in local storage
+    loadTasks(selectedList); // Update displayed tasks in the selected list
   } else {
     alert("Selected list not found in local storage!");
   }
 }
 
-// Function to display saved tasks in the list that is chosen
+// завантажуємо списки товарів при завантаженні сторінки
+ window.addEventListener("load", loadTaskLists);
+
+// завантаження завдань для обраного списку та відображення їх на сторінці.
 function displaySavedTasks() {
   const selectedList = listSelect.value;
   loadTasks(selectedList);
